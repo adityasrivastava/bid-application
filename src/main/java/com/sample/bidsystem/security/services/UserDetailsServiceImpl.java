@@ -1,6 +1,6 @@
 package com.sample.bidsystem.security.services;
 
-import com.sample.bidsystem.model.User;
+import com.sample.bidsystem.entity.User;
 import com.sample.bidsystem.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

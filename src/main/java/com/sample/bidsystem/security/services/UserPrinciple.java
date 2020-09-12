@@ -1,7 +1,7 @@
 package com.sample.bidsystem.security.services;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.sample.bidsystem.model.User;
+import com.sample.bidsystem.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
