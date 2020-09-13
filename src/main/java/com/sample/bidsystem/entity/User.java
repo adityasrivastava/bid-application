@@ -39,11 +39,12 @@ public class User extends BaseEntity {
 
     public User() {}
 
-    public User(String name, String username, String email, String password) {
+    public User(String name, String username, String email, String password, Set<Role> roles) {
         this.name = name;
         this.username = username;
         this.email = email;
         this.password = password;
+        this.roles = roles;
     }
 
     public String getUsername() {

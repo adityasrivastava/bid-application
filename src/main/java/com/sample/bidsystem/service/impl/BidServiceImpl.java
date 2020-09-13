@@ -22,7 +22,7 @@ public class BidServiceImpl implements BidService {
 
         UserBid userBid;
 
-        final Optional<UserBid> lastBid = userBidRepository.findByAuction();
+        final Optional<UserBid> lastBid = userBidRepository.findFirstByAuctionOrderByCreatedDesc(auction);
 
         if(isPriceValidForExistingBid(auction, price, lastBid)){
 

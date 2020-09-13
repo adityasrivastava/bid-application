@@ -23,6 +23,17 @@ public class Auction extends BaseEntity {
     @Column(name = "user_bids_id")
     private Set<UserBid> userBids;
 
+    public Auction() {
+    }
+
+    public Auction(Item item, float basePrice, float stepRate, Status status, Set<UserBid> userBids) {
+        this.item = item;
+        this.basePrice = basePrice;
+        this.stepRate = stepRate;
+        this.status = status;
+        this.userBids = userBids;
+    }
+
     public Item getItem() {
         return item;
     }

@@ -41,13 +41,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public User addUser(RegisterForm registerForm) {
 
-        User user = new User(registerForm.getName(), registerForm.getUsername(),
-                registerForm.getEmail(), encoder.encode(registerForm.getPassword()));
-
-        Set<String> strRoles = registerForm.getRole();
+        User user;
         Set<Role> roles = new HashSet<>();
 
-        strRoles.forEach(role -> {
+        Set<String> userRoles = registerForm.getRole();
+
+        user = new User(registerForm.getName(), registerForm.getUsername(),
+                registerForm.getEmail(), encoder.encode(registerForm.getPassword()),roles);
+
+        userRoles.forEach(role -> {
             switch(role) {
                 case "seller":
                     Role seller = roleRepository.findByName(RoleType.ROLE_SELLER)

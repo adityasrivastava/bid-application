@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 @Service
 public class AuctionServiceImpl implements AuctionService {
@@ -34,14 +33,14 @@ public class AuctionServiceImpl implements AuctionService {
     }
 
     @Override
-    public void bidForItem(Long auctionId, float price, User buyer) throws BidException, Exception {
+    public UserBid bidForItem(Long auctionId, float price, User buyer) throws BidException, Exception {
 
         final Optional<Auction> auction = auctionRepository.findById(auctionId);
 
         if(!auction.isPresent())
             throw new Exception("Auction ID not found");
 
-        bidService.bid(auction.get(), price, buyer);
+        return bidService.bid(auction.get(), price, buyer);
 
     }
 
