@@ -4,7 +4,6 @@ import com.sample.bidsystem.entity.Auction;
 import com.sample.bidsystem.entity.Status;
 import com.sample.bidsystem.entity.User;
 import com.sample.bidsystem.model.request.BidRequest;
-import com.sample.bidsystem.model.request.QueueBidMessage;
 import com.sample.bidsystem.repository.UserRepository;
 import com.sample.bidsystem.service.AuctionService;
 import org.slf4j.Logger;
@@ -18,7 +17,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.jms.Queue;
 import javax.validation.Valid;
 import java.security.Principal;
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/auctions")

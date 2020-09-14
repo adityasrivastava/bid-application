@@ -7,7 +7,6 @@ import com.sample.bidsystem.entity.UserBid;
 import com.sample.bidsystem.exception.BidException;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface AuctionService {
 

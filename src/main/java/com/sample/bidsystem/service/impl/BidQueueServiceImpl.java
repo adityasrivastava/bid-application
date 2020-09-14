@@ -1,14 +1,15 @@
 package com.sample.bidsystem.service.impl;
 
-import com.sample.bidsystem.entity.*;
+import com.sample.bidsystem.entity.Auction;
+import com.sample.bidsystem.entity.User;
+import com.sample.bidsystem.entity.UserBidRequest;
+import com.sample.bidsystem.entity.UserBidRequestStatus;
 import com.sample.bidsystem.exception.BidException;
-import com.sample.bidsystem.model.request.QueueBidMessage;
 import com.sample.bidsystem.repository.AuctionRepository;
 import com.sample.bidsystem.repository.UserBidRequestRepository;
 import com.sample.bidsystem.repository.UserRepository;
 import com.sample.bidsystem.service.AuctionService;
 import com.sample.bidsystem.service.BidQueueService;
-import com.sample.bidsystem.service.BidService;
 import org.apache.activemq.command.ActiveMQMapMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.annotation.JmsListener;
@@ -16,7 +17,6 @@ import org.springframework.stereotype.Service;
 
 import javax.jms.JMSException;
 import javax.jms.Message;
-import java.util.HashMap;
 import java.util.Optional;
 
 @Service

@@ -1,7 +1,5 @@
 package com.sample.bidsystem.model.request;
 
-import com.sample.bidsystem.entity.User;
-
 import javax.validation.constraints.NotNull;
 
 public class BidRequest {

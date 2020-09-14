@@ -1,6 +1,5 @@
 package com.sample.bidsystem.service.impl;
 
-import com.sample.bidsystem.controller.AuctionController;
 import com.sample.bidsystem.entity.Auction;
 import com.sample.bidsystem.entity.Status;
 import com.sample.bidsystem.entity.User;
@@ -10,7 +9,6 @@ import com.sample.bidsystem.repository.AuctionRepository;
 import com.sample.bidsystem.repository.UserBidRepository;
 import com.sample.bidsystem.service.AuctionService;
 import com.sample.bidsystem.service.BidService;
-import org.checkerframework.checker.units.qual.A;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
