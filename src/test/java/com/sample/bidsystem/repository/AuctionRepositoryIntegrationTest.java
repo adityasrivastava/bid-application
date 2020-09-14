@@ -26,6 +26,9 @@ public class AuctionRepositoryIntegrationTest {
 
     private Auction auction;
 
+    /**
+     * TODO - can done using sql script to pre populate with test data for JUnit will require less build time
+     */
     @Before
     public void setUp(){
 

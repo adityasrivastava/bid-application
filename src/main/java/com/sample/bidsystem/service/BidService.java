@@ -9,4 +9,6 @@ public interface BidService {
 
     public UserBid bid(Auction auction, float price, User buyer) throws BidException;
 
+    public boolean isBidValid(Auction auction, float price);
+
 }

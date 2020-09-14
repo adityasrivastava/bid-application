@@ -19,7 +19,7 @@ public class Auction extends BaseEntity {
     @Column(name = "status")
     private Status status;
 
-    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY)
     @Column(name = "user_bids_id")
     private Set<UserBid> userBids;
 

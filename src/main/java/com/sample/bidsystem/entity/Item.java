@@ -21,6 +21,9 @@ public class Item extends BaseEntity {
     @Column(name = "price")
     private float price;
 
+    public Item() {
+    }
+
     public Item(String name, String itemCode, User seller, float price) {
         this.name = name;
         this.itemCode = itemCode;
