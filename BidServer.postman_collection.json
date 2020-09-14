@@ -1,0 +1,496 @@
+{
+	"info": {
+		"_postman_id": "7947019d-8f9a-4ad2-8ae5-a27e4ef907a8",
+		"name": "BidServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sign UP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"seller\",\n    \"username\" : \"seller\",\n    \"password\" : \"seller123\",\n    \"email\" : \"seller@sample.com\",\n    \"role\" : [\"ROLE_USER\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sign UP",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"buyer\",\n    \"username\" : \"buyer\",\n    \"password\" : \"buyer123\",\n    \"email\" : \"buyer@sample.com\",\n    \"role\" : [\"ROLE_USER\", \"ROLE_BUYER\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/auth/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Sep 2020 17:32:23 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "User registered successfully!"
+				}
+			]
+		},
+		{
+			"name": "Sign In",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"seller\",\n    \"password\" : \"seller123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/signin",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sign In",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"seller\",\n    \"password\" : \"seller123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/auth/signin",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Sep 2020 13:53:59 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzZWxsZXIiLCJpYXQiOjE2MDAwOTE2MzksImV4cCI6MTYwMDE3ODAzOX0.ydjkqGkQdR0qXgTRGtNvd-lqh58IawW18OaTNyjS8uJLMw35GWl7dV9alRni2mq6pxYLuLetTV8fTgdE9mwVQA\",\n    \"tokenType\": \"Bearer\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET AUCTION",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzZWxsZXIiLCJpYXQiOjE1OTk5MzIyNzksImV4cCI6MTYwMDAxODY3OX0.D4vj9PHbeh_rHrmuhpCh_EJEbCBYBGDyVBqWOJt1g6pNHLKplUxGnvFunMgRPwL1BQi1IvC8SMNYM76wX_pyCw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/auctions/?status=RUNNING",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auctions",
+						""
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "RUNNING"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET AUCTION",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/auctions/?status=RUNNING",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auctions",
+								""
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "RUNNING"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Sep 2020 19:31:40 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"created\": \"2020-09-12T12:07:06.996+0000\",\n        \"updated\": \"2020-09-12T12:07:06.996+0000\",\n        \"item\": {\n            \"id\": 1,\n            \"created\": \"2020-09-12T12:05:07.739+0000\",\n            \"updated\": \"2020-09-12T12:05:07.739+0000\",\n            \"name\": \"Item_1\",\n            \"itemCode\": \"1e90e367-7a02-4d23-baba-0c51015210ca\",\n            \"seller\": {\n                \"id\": 1,\n                \"created\": \"2020-09-12T17:30:38.851+0000\",\n                \"updated\": \"2020-09-12T17:30:38.851+0000\",\n                \"name\": \"seller\",\n                \"username\": \"seller\",\n                \"email\": \"seller@sample.com\",\n                \"password\": \"$2a$10$Iq0aGURoDHM.aJlg/Zaho.MJSDVu903OQCTSXuVRKw/9cGJvDIeDq\",\n                \"roles\": [\n                    {\n                        \"id\": 1,\n                        \"created\": null,\n                        \"updated\": null,\n                        \"name\": \"ROLE_USER\"\n                    }\n                ]\n            },\n            \"price\": 2\n        },\n        \"basePrice\": 6,\n        \"stepRate\": 1,\n        \"status\": \"RUNNING\",\n        \"userBids\": [\n            {\n                \"id\": 1,\n                \"created\": \"2020-09-12T17:55:23.062+0000\",\n                \"updated\": \"2020-09-12T17:55:23.062+0000\",\n                \"bidAmount\": 5,\n                \"buyer\": {\n                    \"id\": 1,\n                    \"created\": \"2020-09-12T17:30:38.851+0000\",\n                    \"updated\": \"2020-09-12T17:30:38.851+0000\",\n                    \"name\": \"seller\",\n                    \"username\": \"seller\",\n                    \"email\": \"seller@sample.com\",\n                    \"password\": \"$2a$10$Iq0aGURoDHM.aJlg/Zaho.MJSDVu903OQCTSXuVRKw/9cGJvDIeDq\",\n                    \"roles\": [\n                        {\n                            \"id\": 1,\n                            \"created\": null,\n                            \"updated\": null,\n                            \"name\": \"ROLE_USER\"\n                        }\n                    ]\n                }\n            }\n        ]\n    },\n    {\n        \"id\": 2,\n        \"created\": \"2020-09-12T12:07:19.562+0000\",\n        \"updated\": \"2020-09-12T12:07:19.562+0000\",\n        \"item\": {\n            \"id\": 2,\n            \"created\": \"2020-09-12T12:05:33.519+0000\",\n            \"updated\": \"2020-09-12T12:05:33.519+0000\",\n            \"name\": \"Item_1\",\n            \"itemCode\": \"b1a02fd2-e35d-49cd-9bcd-2cbd73e2b2b7\",\n            \"seller\": {\n                \"id\": 1,\n                \"created\": \"2020-09-12T17:30:38.851+0000\",\n                \"updated\": \"2020-09-12T17:30:38.851+0000\",\n                \"name\": \"seller\",\n                \"username\": \"seller\",\n                \"email\": \"seller@sample.com\",\n                \"password\": \"$2a$10$Iq0aGURoDHM.aJlg/Zaho.MJSDVu903OQCTSXuVRKw/9cGJvDIeDq\",\n                \"roles\": [\n                    {\n                        \"id\": 1,\n                        \"created\": null,\n                        \"updated\": null,\n                        \"name\": \"ROLE_USER\"\n                    }\n                ]\n            },\n            \"price\": 3\n        },\n        \"basePrice\": 6,\n        \"stepRate\": 1,\n        \"status\": \"RUNNING\",\n        \"userBids\": []\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "POST BID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzZWxsZXIiLCJpYXQiOjE1OTk5MzIyNzksImV4cCI6MTYwMDAxODY3OX0.D4vj9PHbeh_rHrmuhpCh_EJEbCBYBGDyVBqWOJt1g6pNHLKplUxGnvFunMgRPwL1BQi1IvC8SMNYM76wX_pyCw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/auctions/1/bid",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auctions",
+						"1",
+						"bid"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST BID",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"price\" : 29,\n    \"auctionId\" : 1,\n    \"itemCode\" : \"1290312\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/auctions/1/1e90e367-7a02-4d23-baba-0c51015210ca/bid",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auctions",
+								"1",
+								"1e90e367-7a02-4d23-baba-0c51015210ca",
+								"bid"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "36"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Sep 2020 16:01:01 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "8496d63f-79d9-4663-aba5-f1b98514e2da"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}

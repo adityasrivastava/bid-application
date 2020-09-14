@@ -1,0 +1,47 @@
+version: '3.7'
+networks:
+  backend:
+    name: app
+    driver: bridge
+volumes:
+  postgres-data1:
+services:
+  app:
+    image: docker.io/adityasrivastava/bid-application:latest
+    container_name: web-app
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      DB_URL: jdbc:postgresql://db/testdb1
+    ports:
+      - "8080:8080"
+    networks:
+      - backend
+    depends_on:
+      - db
+    healthcheck:
+      test: curl -f http://localhost:8080/check || exit 1
+      interval: 1m
+      timeout: 10s
+      retries: 2
+  db:
+    image: docker.io/adityasrivastava/bid-postgres:latest
+    container_name: bid-postgres2
+    restart: always
+    volumes:
+      - postgres-data1:/var/lib/postgresql/data
+      - ./db.sql:/docker-entrypoint-initdb.d/db.sql
+    networks:
+      - backend
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: public
+      PGDATA: /var/lib/postgresql/data/pgdata
+    healthcheck:
+      test: pg_isready -U postgres
+      interval: 1m
+      timeout: 10s
+      retries: 2
